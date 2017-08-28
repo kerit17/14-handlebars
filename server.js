@@ -27,7 +27,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //Inport routes and give server access
-// require("./controllers/ic_controller")(app);
+require("./controllers/ic_controller")(app);
 
 //Listener - start the server
 app.listen(PORT, function(){
