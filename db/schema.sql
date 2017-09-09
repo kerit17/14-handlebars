@@ -1,5 +1,3 @@
-DROP DATABASE IF EXISTS iceCream_db;
-
 -- Create the db
 CREATE DATABASE iceCream_db;
 

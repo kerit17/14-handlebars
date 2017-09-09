@@ -1,44 +1,48 @@
-<h1>Cats!</h1>
-<h2>Cats that are not sleepy!</h2>
+<h1>I Scream! You Scream! We All Scream for Ice Cream!</h1>
+
+<h2>Available Ice Cream</h2>
+
 <ul>
-  {{#each cats}}
-    {{#unless this.sleepy}}
+  {{#each icecream_name}}
+    {{#unless this.devour}}
       <li>
-        {{this.name}}
+        {{this.icecream_name}}
+
         <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="true">
-          <button type="submit">SLEEP TIME!</button>
+          <input type="hidden" name="devour" value="true">
+          <button type="submit">Yum Yum!</button>
         </form>
-        {{> cats/delete-cat}}
       </li>
     {{/unless}}
-  {{/each}}
+  {{/each}}  
 </ul>
-<h2>Cats that are sleepy!</h2>
+
+<h2>Ice Cream that is Not Available</h2>
 <ul>
-  {{#each cats}}
-    {{#if this.sleepy}}
+  {{#each icecream_name}}
+    {{#if this.devour}}
       <li>
-        {{this.name}}
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="false">
-          <button type="submit">WAKE UP!</button>
-        </form>
-        {{> cats/delete-cat}}
+        {{this.icecream_name}}
       </li>
     {{/if}}
   {{/each}}
 </ul>
-<h2>Add a Cat</h2>
-<form class="create-update-form" action="/" method="POST">
+
+<h2>Make an Ice Cream Delivery!</h2>
+<form class="create-form" action="/" method="POST">
+
   <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
+    <label for="ca">Ice Cream Name:</label>
+    <input type="text" id="ca" name="icecream_name">
   </div>
+
   <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
+    <label for="slee">Available?</label>
+    <br>
+    <input type="radio" name="devoured" value="1" checked> Available!
+    <br>
+    <input type="radio" name="devoured" value="0"> Unavailable
   </div>
-  <button type="submit">Add Cat</button>
+
+  <button type="submit">Add Ice Cream</button>
 </form>
