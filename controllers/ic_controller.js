@@ -1,12 +1,13 @@
 //Dependencies
 var express = require("express");
-var router = express.Router();
+var app = express();
+// var router = express.Router();
 
 //Import model (icecream.js) to use its database functions
 var icecream = require ("../models/icecream.js");
 
 //Create Routes and set up logic when required
-router.get("/", function(req, res){
+app.get("/", function(req, res){
 	icecream.all(function(data){
 		var hbsObject = {
 			icecream: data
@@ -16,17 +17,17 @@ router.get("/", function(req, res){
 	});
 });
 
-router.post("/", function(req, res){
+app.post("/", function(req, res){
 	icecream.create([
-		"iceCream_name", "devour"
+		"iceCream_name", "devoured"
 		], [
-		req.body.iceCream_name, req.body.devour
+		req.body.iceCream_name, req.body.devoured
 		], function() {
 			res.redirect("/");
 	});
 });
 
-router.put("/:id", function(req, res){
+app.put("/:id", function(req, res){
 	var condition = "id = " + req.params.id;
 	console.log("condition: " + condition);
 
@@ -38,4 +39,4 @@ router.put("/:id", function(req, res){
 });
 
 //Export route for server.js to use
-module.exports = router;
+module.exports = app;

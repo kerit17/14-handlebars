@@ -3,13 +3,13 @@
 <h2>Available Ice Cream</h2>
 
 <ul>
-  {{#each icecream_name}}
-    {{#unless this.devour}}
+  {{#each iceCream_name}}
+    {{#unless this.devoured}}
       <li>
-        {{this.icecream_name}}
+        {{this.iceCream_name}}
 
         <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devour" value="true">
+          <input type="hidden" name="devoured" value="true">
           <button type="submit">Yum Yum!</button>
         </form>
       </li>
@@ -19,10 +19,10 @@
 
 <h2>Ice Cream that is Not Available</h2>
 <ul>
-  {{#each icecream_name}}
-    {{#if this.devour}}
+  {{#each iceCream_name}}
+    {{#if this.devoured}}
       <li>
-        {{this.icecream_name}}
+        {{this.iceCream_name}}
       </li>
     {{/if}}
   {{/each}}
@@ -33,7 +33,7 @@
 
   <div class="form-group">
     <label for="ca">Ice Cream Name:</label>
-    <input type="text" id="ca" name="icecream_name">
+    <input type="text" id="ca" name="iceCream_name">
   </div>
 
   <div class="form-group">
