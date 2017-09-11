@@ -21,7 +21,7 @@ app.post("/", function(req, res){
 	icecream.create([
 		"iceCream_name", "devoured"
 		], [
-		req.body.iceCream_name, req.body.devoured
+		req.body.iceCream_name, req.body.devour
 		], function() {
 			res.redirect("/");
 	});

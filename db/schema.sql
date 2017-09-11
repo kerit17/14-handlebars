@@ -9,7 +9,7 @@ CREATE TABLE iceCream
 (
 	id int NOT NULL auto_increment,
     iceCream_name varchar(255) NOT NULL,
-    devoured BOOLEAN DEFAULT false,
+    devoured BOOLEAN NOT NULL false,
     date TIMESTAMP NOT NULL,
     primary key (id)
 );
