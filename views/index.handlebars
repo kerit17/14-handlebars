@@ -3,8 +3,8 @@
 <h2>Available Ice Cream</h2>
 
 <ul>
-  {{#each iceCream_name}}
-    {{#unless this.devoured}}
+  {{#each icecream}}
+    {{#unless this.devour}}
       <li>
         {{this.iceCream_name}}
 
@@ -19,8 +19,8 @@
 
 <h2>Ice Cream that is Not Available</h2>
 <ul>
-  {{#each iceCream_name}}
-    {{#if this.devoured}}
+  {{#each icecream}}
+    {{#if this.devour}}
       <li>
         {{this.iceCream_name}}
       </li>
