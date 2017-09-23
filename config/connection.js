@@ -16,7 +16,6 @@ else {
 	})
 };
 
-
 //Make connection
 connection.connect(function(err){
 	if(err){
