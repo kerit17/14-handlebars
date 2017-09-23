@@ -13,7 +13,8 @@ else {
 	user: "vnasomtdyewswjnx",
 	password: "txnsbcvj9wmt0tky",
 	database: "v15xj7paspcqjgkb"
-});
+	})
+};
 
 //Make connection
 connection.connect(function(err){
