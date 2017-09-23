@@ -1,12 +1,18 @@
 //Set up mySQL connection
 var mysql = require("mysql");
 
-var connection = mysql.createConnection({
-	port: 3306,
-	host: "localhost",
-	user: "root",
-	password: "root",
-	database: "iceCream_db"
+var connection;
+
+if(process.env.JAWSDB_URL) {
+	connection = mysql.createConnection(process.env.JAWSDB_URL);
+} 
+else {
+	connection = mysql.createConnection({
+	// port: 3306,
+	host: "p1us8ottbqwio8hv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+	user: "vnasomtdyewswjnx",
+	password: "txnsbcvj9wmt0tky",
+	database: "v15xj7paspcqjgkb"
 });
 
 //Make connection
